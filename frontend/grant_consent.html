@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grant / Revoke Consent</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Grant / Revoke Consent</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="view_consents.html">View Consents</a>
+    </nav>
+
+    <div class="card">
+        <form>
+            <label>User</label>
+            <select>
+                <option>Aarav Kumar</option>
+                <option>Meera Sharma</option>
+            </select>
+
+            <label>Application</label>
+            <select>
+                <option>HealthTrack App</option>
+                <option>FitLife App</option>
+            </select>
+
+            <label>Data Type</label>
+            <select>
+                <option>Email</option>
+                <option>Phone Number</option>
+                <option>Medical Records</option>
+            </select>
+
+            <!-- Represents INSERT / UPDATE SQL -->
+            <button type="button">Grant Consent</button>
+            <button type="button" class="secondary">Revoke Consent</button>
+        </form>
+
+        <p style="margin-top:15px; font-size: 14px;">
+            <b>Note:</b> These actions correspond to INSERT and UPDATE queries
+            defined in <code>core_queries.sql</code>.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

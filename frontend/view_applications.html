@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Applications</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Applications</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="view_users.html">View Users</a>
+        <a href="grant_consent.html">Grant / Revoke Consent</a>
+        <a href="view_consents.html">View Consents</a>
+    </nav>
+
+    <div class="card">
+        <h2>Registered Applications</h2>
+
+        <table border="1" width="100%" cellpadding="8">
+            <tr>
+                <th>App ID</th>
+                <th>Application Name</th>
+                <th>Organization</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>HealthTrack App</td>
+                <td>HealthTech Pvt Ltd</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>FitLife App</td>
+                <td>Wellness Solutions</td>
+            </tr>
+        </table>
+
+        <p style="margin-top:15px; font-size:14px;">
+            <b>Source:</b> Data shown using SQL query  
+            <code>SELECT * FROM applications;</code>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Consents</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>View Consents</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="grant_consent.html">Grant / Revoke Consent</a>
+    </nav>
+
+    <div class="card">
+        <h2>Consent Summary</h2>
+
+        <table border="1" width="100%" cellpadding="8">
+            <tr>
+                <th>User</th>
+                <th>Application</th>
+                <th>Data Type</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Aarav Kumar</td>
+                <td>HealthTrack App</td>
+                <td>Email</td>
+                <td>Granted</td>
+            </tr>
+            <tr>
+                <td>Meera Sharma</td>
+                <td>FitLife App</td>
+                <td>Medical Records</td>
+                <td>Revoked</td>
+            </tr>
+        </table>
+
+        <p style="margin-top:15px; font-size: 14px;">
+            <b>Source:</b> Output of JOIN queries from <code>core_queries.sql</code>.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

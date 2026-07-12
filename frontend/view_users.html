@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Users</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Users</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="add_user.html">Add User</a>
+        <a href="view_applications.html">View Applications</a>
+    </nav>
+
+    <div class="card">
+        <h2>User Details</h2>
+
+        <table border="1" width="100%" cellpadding="8" id="usersTable">
+            <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+            <!-- rows will be added dynamically -->
+        </table>
+
+        <p style="margin-top:15px; font-size:14px;">
+            <b>Data source:</b> Loaded dynamically from Flask backend  
+            (<code>GET /users</code>)
+        </p>
+    </div>
+</div>
+
+<!-- =========================
+     FETCH USERS FROM BACKEND
+     ========================= -->
+<script>
+function loadUsers() {
+    fetch("http://127.0.0.1:5000/users")
+        .then(response => response.json())
+        .then(users => {
+            const table = document.getElementById("usersTable");
+            table.innerHTML = `
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Action</th>
+                </tr>
+            `;
+
+            users.forEach(user => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${user.user_id}</td>
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    <td>${user.phone}</td>
+                    <td>
+                        <button onclick="deleteUser(${user.user_id})">Delete</button>
+                    </td>
+                `;
+                table.appendChild(row);
+            });
+        });
+}
+
+function deleteUser(id) {
+    fetch(`http://127.0.0.1:5000/delete_user/${id}`, {
+        method: "DELETE"
+    })
+    .then(() => {
+        loadUsers(); // refresh table
+    });
+}
+
+loadUsers();
+</script>
+
+</body>
+</html>
